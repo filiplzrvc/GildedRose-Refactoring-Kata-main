@@ -18,4 +18,11 @@ describe('Gilded Rose', function () {
     expect(items[0].sellIn).toEqual(1);
     expect(items[0].quality).toEqual(1);
   });
+
+    it('should update quality and sellIn for Elixir of the Mongoose', function () {
+      const gildedRose = new Shop([new Item('Elixir of the Mongoose', 5, 7)]);
+      const items = gildedRose.updateQuality();
+      expect(items[0].sellIn).toEqual(4);
+      expect(items[0].quality).toEqual(6);
+    });
 });
